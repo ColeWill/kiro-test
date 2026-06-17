@@ -6,6 +6,11 @@ A living document tracking all work completed on this project, organized by comm
 
 <!-- New entries are added at the top, below this line -->
 
+## 2026-06-17 — Add merge-to-main hook and React best practices steering
+
+- Add user-triggered hook to switch to main, merge feature branch, and update changelog
+- Add steering file with modern React conventions including feature-based folder structure, hooks patterns, Redux Toolkit standards, TypeScript conventions, and common pitfall avoidance
+
 ## 2026-06-17 — Project scaffolding and automation setup
 
 - Add agent hook for auto commit, changelog update, and push on agent stop

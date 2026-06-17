@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Merge Feature to Main",
+  "description": "Switches from the current feature branch to main, merges the feature branch into main, and updates the CHANGELOG.md with a summary of the changes introduced by the merge.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Perform the following steps:\n1. Identify the current feature branch name using `git branch --show-current`. If already on main, stop and inform the user.\n2. Switch to the main branch with `git checkout main`.\n3. Merge the feature branch into main with `git merge <feature-branch-name>` (use a regular merge, not squash).\n4. If the merge fails due to conflicts, inform the user and stop.\n5. After a successful merge, review the commits that were brought in from the feature branch using `git log main..HEAD` or the diff to understand what changed.\n6. Update CHANGELOG.md following the project's documentation standards: add a new entry at the top (below any header) with today's date and a short summary, using action-verb bullets describing the changes. Be specific and human-readable.\n7. Stage and commit the changelog update with a commit message like `docs: update CHANGELOG for <feature-branch> merge`."
+  }
+}
