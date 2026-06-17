@@ -6,6 +6,12 @@ A living document tracking all work completed on this project, organized by comm
 
 <!-- New entries are added at the top, below this line -->
 
+## 2026-06-17 — Add product catalog design and implementation tasks
+
+- Add technical design document covering architecture, component interfaces, data models, correctness properties, and testing strategy
+- Add implementation task list with 9 top-level tasks, dependency graph, and traceability to requirements
+- Design uses single-fetch client-side filtering with memoized Redux selectors and 11 correctness properties for property-based testing
+
 ## 2026-06-17 — Add product catalog feature spec
 
 - Add requirements document for product-catalog feature with 9 detailed requirements
