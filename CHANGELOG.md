@@ -1,0 +1,15 @@
+# Changelog
+
+A living document tracking all work completed on this project, organized by commit.
+
+---
+
+<!-- New entries are added at the top, below this line -->
+
+## 2026-06-17 — Project scaffolding and automation setup
+
+- Add agent hook for auto commit, changelog update, and push on agent stop
+- Add agent hook for creating numbered feature branches (user-triggered)
+- Add CHANGELOG.md as a living document to track work per commit
+- Add steering file with documentation and changelog best practices
+- Initialize project with readme.md

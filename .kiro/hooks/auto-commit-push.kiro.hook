@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto Commit, Document & Push",
+  "description": "After the agent completes work, stage all changes, update CHANGELOG.md with what was completed, generate a meaningful commit message, commit, and push to the current remote branch.",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "You just finished work. Now do the following steps:\n\n1. Review the git diff (staged and unstaged) to understand what changed.\n2. Update the file CHANGELOG.md at the project root. Add a new entry at the top (below the header) under a heading with today's date and a short summary. Under that heading, list bullet points describing what was completed — features built, bugs fixed, refactors done, files added/changed. Keep it concise but meaningful.\n3. Stage ALL changes including the updated CHANGELOG.md: git add -A\n4. Write a meaningful, conventional commit message that summarizes the work (e.g. 'feat: add user authentication flow' or 'fix: resolve null pointer in payment service'). Use the imperative mood.\n5. Commit with that message.\n6. Push to the current branch on origin. If the remote branch doesn't exist yet, use git push -u origin HEAD.\n\nDo NOT ask for confirmation — just execute these steps."
+  }
+}

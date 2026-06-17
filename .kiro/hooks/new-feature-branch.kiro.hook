@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Create Numbered Feature Branch",
+  "description": "When triggered manually, creates a new numbered feature branch from main (e.g. 1-nav-menu, 2-auth-flow) for a clear git history.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The user wants to start a new feature branch. Do the following:\n\n1. List all local branches to find the highest numbered branch prefix. Branches follow the pattern: <number>-<description> (e.g. 1-new-nav-menu, 2-auth-flow). If no numbered branches exist yet, the next number is 1.\n2. Ask the user what the feature is about (a short description).\n3. Convert their description into a kebab-case branch name, prepended with the next number (e.g. 3-add-payment-flow).\n4. Switch to main: git checkout main\n5. Create and checkout the new branch from main: git checkout -b <branch-name>\n6. Confirm the branch was created and tell the user they're ready to work."
+  }
+}
